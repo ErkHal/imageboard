@@ -40,6 +40,10 @@ export class PostingService {
 
     const reply = new FormData();
 
+    if(!replyMessage) {
+      replyMessage = "";
+    }
+
     reply.set('message', replyMessage);
     reply.set('file', this.selectedFile);
 

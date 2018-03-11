@@ -7,8 +7,10 @@
     </header>
     <main>
       <ng-container class="imgBox">
-        <img *ngIf="thread.file" class="postImage"
-            [src]="(thread.file | filepath)"/>
+        <a [href]="(thread.file | filepath)" target="_blank">
+          <img *ngIf="thread.file" class="postImage"
+              [src]="(thread.file | filepath)"/>
+        </a>
       </ng-container>
       <ng-container class="messageBox">
         <p>{{ thread.message }}</p>
@@ -24,7 +26,9 @@
         </header>
         <main>
           <ng-container class="imgBox">
-            <img *ngIf="reply.file" [src]="(reply.file | filepath)"/>
+            <a [href]="(reply.file | filepath)" target="_blank">
+              <img *ngIf="reply.file" [src]="(reply.file | filepath)"/>
+            </a>
           </ng-container>
           <ng-container class="messageBox">
             <p>{{ reply.message }}</p>
