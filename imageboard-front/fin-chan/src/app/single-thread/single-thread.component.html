@@ -1,0 +1,56 @@
+<div *ngIf="this.thread" class="thread">
+  <div class="post startingPost">
+    <header>
+      <p>{{ thread.timestamp }} | ID:{{ thread._id }}
+      </p>
+    </header>
+    <main>
+      <ng-container class="imgBox">
+        <a [href]="(thread.file | filepath)" target="_blank">
+          <img *ngIf="thread.file" class="postImage"
+                [src]="(thread.file | filepath)"/>
+        </a>
+      </ng-container>
+      <ng-container class="messageBox">
+        <p>{{ thread.message }}</p>
+      </ng-container>
+    </main>
+  </div>
+  <div class="repliesContainer">
+    <li *ngFor="let reply of thread.replies"
+        class="post reply">
+        <header>
+          <p>{{ reply.timestamp }}</p>
+        </header>
+        <main>
+          <ng-container class="imgBox">
+            <a [href]="(reply.file | filepath)" target="_blank">
+              <img *ngIf="reply.file" [src]="(reply.file | filepath)"/>
+            </a>
+          </ng-container>
+          <ng-container class="messageBox">
+            <p>{{ reply.message }}</p>
+          </ng-container>
+        </main>
+    </li>
+  </div>
+  <div class="flexContainer centered">
+    <div class="startThreadForm">
+
+      <h5 class="centered">Reply to this thread</h5>
+
+      <form>
+          <input type="file"
+            (change)="this.postingService.onFileSelect($event)"
+            required/>
+            <br/>
+          <textarea cols="60" rows="5"
+            [(ngModel)] = "this.replyMessage"
+            placeholder="Message"
+            name="message" required>
+            </textarea>
+          <br/>
+          <input (click)="reply()"
+          type="button" value="Reply"
+          [disabled]="!this.postingService.selectedFile">
+      </form>

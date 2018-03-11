@@ -1,0 +1,28 @@
+
+<div class="flexContainer centered">
+  <div class="startThreadForm">
+
+    <h5 class="centered">Start a thread</h5>
+
+    <form>
+        <input type="file"
+          (change)="this.postingService.onFileSelect($event)"
+          required/>
+          <br/>
+        <textarea cols="60" rows="5" [(ngModel)] = "this.newThreadMessage"
+          placeholder="Message"
+          [(ngModel)]="this.newThreadMessage"
+          name="message" required>
+          </textarea>
+        <br/>
+        <input (click)="startNewThread()"
+        type="button" value="Start a thread"
+        [disabled]="!this.postingService.selectedFile">
+    </form>
+
+  </div>
+</div>
+<br/>
+    <li *ngFor="let thread of threads">
+      <app-thread-preview [thread]="thread"></app-thread-preview>
+    </li>

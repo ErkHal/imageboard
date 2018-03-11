@@ -1,0 +1,36 @@
+<div class="thread">
+  <div class="post startingPost">
+    <header>
+      <p>{{ thread.timestamp }} | ID:{{thread._id}}
+          <button [routerLink]="['/threads', thread._id]">Reply</button>
+      </p>
+    </header>
+    <main>
+      <ng-container class="imgBox">
+        <img *ngIf="thread.file" class="postImage"
+            [src]="(thread.file | filepath)"/>
+      </ng-container>
+      <ng-container class="messageBox">
+        <p>{{ thread.message }}</p>
+      </ng-container>
+    </main>
+  </div>
+  <div class="repliesContainer"
+    *ngFor="let reply of thread.replies; let i = index">
+    <li *ngIf="i > thread.replies.length - 4"
+        class="post reply">
+        <header>
+          <p>{{ reply.timestamp }}</p>
+        </header>
+        <main>
+          <ng-container class="imgBox">
+            <img *ngIf="reply.file" [src]="(reply.file | filepath)"/>
+          </ng-container>
+          <ng-container class="messageBox">
+            <p>{{ reply.message }}</p>
+          </ng-container>
+        </main>
+    </li>
+  </div>
+
+</div>

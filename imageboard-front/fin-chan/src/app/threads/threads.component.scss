@@ -1,0 +1,81 @@
+@import '../../styles';
+$post-padding: 0.6rem;
+$post-margin : 1rem;
+
+.flexContainer {
+  display: flex;
+}
+
+.centered {
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.startThreadForm {
+  font-size: 1.5rem;
+  width: 50%;
+  background-color: $primary-color;
+  color: $font-color;
+
+  textarea, button, input{
+    max-width: 100%;
+  }
+}
+
+  li {
+    border: 1px solid $primary-color;
+  }
+
+    .thread {
+      max-width: 95%;
+      width: 95%;
+      margin: 1rem;
+      padding: 1rem;
+      word-wrap: break-word;
+
+      .post {
+        margin: $post-margin 0 $post-margin 0;
+        padding: $post-padding;
+        color: $font-color;
+        background-color: $primary-color;
+
+        img {
+          margin: 0.5rem;
+          max-width: 10rem;
+          max-height: 10rem;
+        }
+
+        header {
+          border-bottom: 1px solid black;
+        }
+
+        main {
+
+          display: flex;
+
+          .imgBox {
+            width: 20%;
+          }
+
+          .messageBox {
+            width: 80%;
+          }
+        }
+      }
+
+      .startingPost {
+        width: 90%;
+
+        button {
+          float: right;
+        }
+
+      }
+
+      .reply {
+        margin-left: 5%;
+        width: 85%;
+
+      }
+    }
