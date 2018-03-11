@@ -4,7 +4,7 @@
 
 So far supports only images. Plan is to add more functionalities in the future.
 
-Server need dbConfig.json file to authenticate into MongoDB instance.
+Server needs dbConfig.json file to authenticate into MongoDB instance.
 Here's a template for the file:
 
 ```
@@ -16,3 +16,9 @@ Here's a template for the file:
   "database": "DBNAME"
 }
 ```
+
+When you extract the repo, remember to run
+```
+npm install
+```
+for both front and back-end.
