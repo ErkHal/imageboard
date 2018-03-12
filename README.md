@@ -1,6 +1,6 @@
 # FinChan
 
-![*Screencapture*](https://gyazo.com/30ac147fe03d29b1bf96752a9449cab3 "Screenshot")
+![](https://i.gyazo.com/30ac147fe03d29b1bf96752a9449cab3.png "Screenshot")
 
 ## MEAN stack old-school imageboard project
 
