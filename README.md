@@ -1,5 +1,7 @@
 # FinChan
 
+![*Screencapture*](https://gyazo.com/30ac147fe03d29b1bf96752a9449cab3 "Screenshot")
+
 ## MEAN stack old-school imageboard project
 
 So far supports only images. Plan is to add more functionalities in the future.
