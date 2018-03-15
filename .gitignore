@@ -1,0 +1,3 @@
+imageboard-server/node_modules/*
+imageboard-server/dbConfig.json
+imageboard-server/public/*
