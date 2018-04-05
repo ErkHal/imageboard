@@ -5,17 +5,21 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//reCAPTCHA initializations
+const Recaptcha = require('express-recaptcha').Recaptcha;
+const recaptcha = new Recaptcha(config.site_key, config.secret_key);
+
 //MongoDB connection settings
 const mongo = require('mongodb').MongoClient;
 
 //get credentials
-const creds = require('./dbConfig.json');
+const config = require('./config.json');
 
 const url = "mongodb://"
-+ creds.username + ":" + creds.password
++ config.username + ":" + config.password
 + "@"
-+ creds.hostaddress + ":" + creds.port
-+ "/" + creds.database;
++ config.hostaddress + ":" + config.port
++ "/" + config.database;
 
 //Use monk to connect to db instance
 var monk = require('monk');
