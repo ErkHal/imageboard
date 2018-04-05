@@ -15,7 +15,9 @@ Here's a template for the file:
   "password": "PASSWORD",
   "hostaddress": "HOSTADDR",
   "port": "PORTNUMBER",
-  "database": "DBNAME"
+  "database": "DBNAME",
+  "site_key": "RECAPTCHA SITE KEY HERE",
+  "secret_key": "RECAPTCHA SECRET KEY HERE"
 }
 ```
 
