@@ -5,10 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-//reCAPTCHA initializations
-const Recaptcha = require('express-recaptcha').Recaptcha;
-const recaptcha = new Recaptcha(config.site_key, config.secret_key);
-
 //MongoDB connection settings
 const mongo = require('mongodb').MongoClient;
 
