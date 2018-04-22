@@ -6,7 +6,7 @@
 
 So far supports only images. Plan is to add more functionalities in the future.
 
-Server needs dbConfig.json file to authenticate into MongoDB instance.
+Server needs config.json file to authenticate into MongoDB instance.
 Here's a template for the file:
 
 ```
@@ -15,9 +15,7 @@ Here's a template for the file:
   "password": "PASSWORD",
   "hostaddress": "HOSTADDR",
   "port": "PORTNUMBER",
-  "database": "DBNAME",
-  "site_key": "RECAPTCHA SITE KEY HERE",
-  "secret_key": "RECAPTCHA SECRET KEY HERE"
+  "database": "DBNAME"
 }
 ```
 
